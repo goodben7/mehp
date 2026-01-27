@@ -18,12 +18,13 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="text-center z-10 px-4">
+      {/* Main Content Block - Optically Centered */}
+      <div className="text-center z-10 px-4 -translate-y-8 md:-translate-y-12">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1, ease: "backOut" }}
-          className="mb-8 inline-block"
+          className="mb-6 md:mb-8 inline-block"
         >
           <motion.div
             animate={{ scale: [1, 1.15, 1] }}
@@ -34,11 +35,11 @@ const HeroSection = () => {
               times: [0, 0.5, 1]
             }}
           >
-            <Heart className="w-20 h-20 text-soft-gold fill-soft-gold/20 mx-auto drop-shadow-[0_0_15px_rgba(245,194,122,0.3)]" />
+            <Heart className="w-20 h-20 md:w-24 md:h-24 text-soft-gold fill-soft-gold/20 mx-auto drop-shadow-[0_0_15px_rgba(245,194,122,0.3)]" />
           </motion.div>
         </motion.div>
 
-        <div className="overflow-hidden mb-4">
+        <div className="overflow-hidden mb-2">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,38 +54,39 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="text-3xl md:text-5xl font-light text-romantic-pink italic mt-2 drop-shadow-md"
+          className="text-3xl md:text-5xl font-light text-romantic-pink italic drop-shadow-md"
         >
           Ma Queen
         </motion.h2>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1 }}
-          className="absolute bottom-10 left-0 right-0 mx-auto flex flex-col items-center"
-        >
-          <p className="text-muted-text text-sm uppercase tracking-widest mb-4">Scroll pour découvrir ta surprise</p>
-          <motion.div
-            animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-soft-gold"
-            >
-              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-            </svg>
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Scroll Indicator - Bottom Pinned */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 3, duration: 1 }}
+        className="absolute bottom-10 left-0 right-0 z-10 mx-auto flex flex-col items-center"
+      >
+        <p className="text-muted-text text-sm uppercase tracking-widest mb-4 font-light opacity-80">Scroll pour découvrir ta surprise</p>
+        <motion.div
+          animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-soft-gold w-6 h-6 md:w-8 md:h-8"
+          >
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+          </svg>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
