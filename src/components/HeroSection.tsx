@@ -11,14 +11,14 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "backOut" }}
           className="mb-6 inline-block"
         >
-          <Heart className="w-16 h-16 text-gold fill-gold/20 mx-auto animate-pulse-slow" />
+          <Heart className="w-16 h-16 text-soft-gold fill-soft-gold/20 mx-auto animate-pulse-slow" />
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide"
+          className="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide drop-shadow-lg"
         >
           Joyeux Anniversaire
         </motion.h1>
@@ -27,7 +27,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-3xl md:text-5xl font-light text-gold italic"
+          className="text-3xl md:text-5xl font-light text-romantic-pink italic"
         >
           Ma Queen
         </motion.h2>
@@ -36,12 +36,12 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="mt-12 text-lg text-white/60 animate-bounce"
+          className="mt-12 text-lg text-muted-text animate-bounce-slow"
         >
           Scroll pour découvrir ta surprise ↓
         </motion.p>
       </div>
-    </section>
+    </section >
   );
 };
 

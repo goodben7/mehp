@@ -13,7 +13,6 @@ const Particles = () => {
             animationDuration: `${15 + Math.random() * 10}s`,
           }}
         >
-          {Math.random() > 0.5 ? '✨' : '💫'}
         </div>
       ))}
     </div>

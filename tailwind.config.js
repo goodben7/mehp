@@ -6,10 +6,14 @@ export default {
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'],
         sans: ['"Lato"', 'sans-serif'],
+        handwriting: ['"Great Vibes"', 'cursive'],
       },
       colors: {
-        gold: '#D4AF37',
-        'deep-purple': '#2E1065',
+        night: '#0F172A',
+        'night-light': '#1E293B',
+        'romantic-pink': '#F472B6',
+        'soft-gold': '#F5C27A',
+        'muted-text': '#CBD5E1',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

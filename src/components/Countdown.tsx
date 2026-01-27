@@ -41,37 +41,37 @@ const Countdown = () => {
     }
 
     timerComponents.push(
-      <div key={interval} className="flex flex-col items-center mx-4 my-2">
+      <div key={interval} className="countdown-card group flex flex-col items-center mx-2 md:mx-4 my-2 min-w-[100px] md:min-w-[120px]">
         <motion.div
           key={`${interval}-${timeLeft[interval as keyof typeof timeLeft]}`}
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="text-4xl md:text-6xl font-serif text-white font-bold glass-card w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-xl mb-2 text-gold shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+          className="countdown-number"
         >
           {timeLeft[interval as keyof typeof timeLeft]}
         </motion.div>
-        <span className="text-sm uppercase tracking-widest text-white/70">{interval}</span>
+        <span className="countdown-label">{interval}</span>
       </div>
     );
   });
 
   return (
-    <section className="py-20 flex flex-col items-center justify-center">
+    <section className="py-20 flex flex-col items-center justify-center relative z-10">
       {hasEnded ? (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="text-center"
+          className="text-center glass-card p-10 rounded-3xl"
         >
-          <h2 className="text-4xl md:text-6xl font-serif text-gold mb-4">Aujourd’hui, on célèbre Queen 💖</h2>
-          <p className="text-xl text-white/80">Que la fête commence !</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-romantic-pink mb-4">Aujourd’hui, on célèbre Queen 💖</h2>
+          <p className="text-xl text-muted-text">Que la fête commence !</p>
         </motion.div>
       ) : (
         <>
           <motion.h3
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-2xl font-light mb-8 text-white/80"
+            className="text-2xl font-light mb-8 text-soft-gold tracking-[0.2em] uppercase"
           >
             Le grand moment approche...
           </motion.h3>

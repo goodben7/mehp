@@ -7,7 +7,7 @@ import Particles from './components/Particles';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-deep-purple to-black text-white overflow-x-hidden pt-10">
+    <div className="min-h-screen bg-night text-white overflow-x-hidden pt-10">
       <Particles />
 
       <main className="relative z-10 flex flex-col gap-0 md:gap-10">
