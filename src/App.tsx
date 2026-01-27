@@ -1,5 +1,5 @@
 import HeroSection from './components/HeroSection';
-import Countdown from './components/Countdown';
+import SpecialDate from './components/SpecialDate';
 import PersonalMessage from './components/PersonalMessage';
 import FinalMessage from './components/FinalMessage';
 import Gallery from './components/Gallery';
@@ -12,7 +12,7 @@ function App() {
 
       <main className="relative z-10 flex flex-col gap-0 md:gap-10">
         <HeroSection />
-        <Countdown />
+        <SpecialDate />
         <Gallery />
         <PersonalMessage />
         <FinalMessage />
