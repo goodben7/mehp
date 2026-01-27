@@ -1,33 +1,45 @@
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
 
 const HeroSection = () => {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(true);
-  }, []);
-
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
-      <div
-        className={`text-center transform transition-all duration-2000 ${
-          show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-      >
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient leading-tight">
-          🎉 Joyeux Anniversaire<br />Mon être Humain Préféré 🎂
-        </h1>
-        <p className="text-xl md:text-3xl text-pink-300 font-light animate-fade-in-delay">
-          De la part de ton Benjii ❤️
-        </p>
-      </div>
+    <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20">
+      <div className="text-center z-10 px-4">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "backOut" }}
+          className="mb-6 inline-block"
+        >
+          <Heart className="w-16 h-16 text-gold fill-gold/20 mx-auto animate-pulse-slow" />
+        </motion.div>
 
-      <div className="absolute inset-0 -z-10">
-        <div className="heart-float" style={{ left: '10%', animationDelay: '0s' }}>💖</div>
-        <div className="heart-float" style={{ left: '85%', animationDelay: '2s' }}>💕</div>
-        <div className="heart-float" style={{ left: '30%', animationDelay: '4s' }}>💗</div>
-        <div className="heart-float" style={{ left: '70%', animationDelay: '1s' }}>✨</div>
-        <div className="heart-float" style={{ left: '50%', animationDelay: '3s' }}>💝</div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="text-5xl md:text-7xl font-serif text-white mb-6 tracking-wide"
+        >
+          Joyeux Anniversaire
+        </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="text-3xl md:text-5xl font-light text-gold italic"
+        >
+          Ma Queen
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          className="mt-12 text-lg text-white/60 animate-bounce"
+        >
+          Scroll pour découvrir ta surprise ↓
+        </motion.p>
       </div>
     </section>
   );

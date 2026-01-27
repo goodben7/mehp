@@ -1,52 +1,32 @@
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const FinalMessage = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen flex items-center justify-center px-6 relative"
-    >
-      <div
-        className={`text-center transform transition-all duration-2000 ${
-          isVisible
-            ? 'opacity-100 scale-100'
-            : 'opacity-0 scale-90'
-        }`}
-      >
-        <div className="mb-8 text-8xl animate-pulse-slow">
-          ✨
-        </div>
-        <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-400 bg-clip-text text-transparent mb-6 leading-tight">
-          Ce n'est que<br />le début
-        </h2>
-        <p className="text-xl md:text-2xl text-pink-200 mt-8">
-          Notre plus belle aventure continue...
-        </p>
-        <div className="mt-12 flex justify-center gap-4 text-4xl">
-          <span className="animate-float-delayed-1">💖</span>
-          <span className="animate-float-delayed-2">🌟</span>
-          <span className="animate-float-delayed-3">💝</span>
-        </div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 bg-black/40">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <h2 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
+            Ce n’est que le début... ✨
+          </h2>
+          <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed mb-12">
+            Chaque jour avec toi est une nouvelle page de notre histoire.
+            <br />
+            J'ai hâte d'écrire la suite à tes côtés.
+          </p>
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ delay: 0.5, type: 'spring' }}
+            className="inline-block"
+          >
+            <div className="text-6xl animate-pulse">❤️</div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

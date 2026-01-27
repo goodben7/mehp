@@ -2,17 +2,23 @@ import HeroSection from './components/HeroSection';
 import Countdown from './components/Countdown';
 import PersonalMessage from './components/PersonalMessage';
 import FinalMessage from './components/FinalMessage';
+import Gallery from './components/Gallery';
 import Particles from './components/Particles';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-deep-purple to-black text-white overflow-x-hidden pt-10">
       <Particles />
-      <HeroSection />
-      <Countdown />
-      <PersonalMessage />
-      <FinalMessage />
-      <footer className="text-center py-8 text-pink-300 text-sm">
+
+      <main className="relative z-10 flex flex-col gap-0 md:gap-10">
+        <HeroSection />
+        <Countdown />
+        <Gallery />
+        <PersonalMessage />
+        <FinalMessage />
+      </main>
+
+      <footer className="relative z-10 text-center py-8 text-white/20 text-sm">
         Fait avec 💖 par Benjii
       </footer>
     </div>

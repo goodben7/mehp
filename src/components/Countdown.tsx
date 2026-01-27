@@ -1,88 +1,85 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    isToday: false,
-  });
 
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const targetDate = new Date('2026-02-03T00:00:00');
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
+  function calculateTimeLeft() {
+    const difference = +new Date("2026-02-17") - +new Date(); // Adapter la date ici
+    let timeLeft: any = {};
 
-      if (difference <= 0) {
-        return {
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-          isToday: true,
-        };
-      }
-
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    if (difference > 0) {
+      timeLeft = {
+        jours: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        heures: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-        isToday: false,
+        secondes: Math.floor((difference / 1000) % 60),
       };
-    };
-
-    setTimeLeft(calculateTimeLeft());
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  if (timeLeft.isToday) {
-    return (
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center">
-          <div className="text-6xl md:text-8xl mb-6 animate-bounce-slow">
-            🎂
-          </div>
-          <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-            C'est aujourd'hui 💖
-          </h2>
-        </div>
-      </section>
-    );
+    }
+    return timeLeft;
   }
 
-  return (
-    <section className="min-h-screen flex items-center justify-center px-6">
-      <div className="text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">
-          Compte à rebours ✨
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          <div className="countdown-card">
-            <div className="countdown-number">{timeLeft.days}</div>
-            <div className="countdown-label">Jours</div>
-          </div>
-          <div className="countdown-card">
-            <div className="countdown-number">{timeLeft.hours}</div>
-            <div className="countdown-label">Heures</div>
-          </div>
-          <div className="countdown-card">
-            <div className="countdown-number">{timeLeft.minutes}</div>
-            <div className="countdown-label">Minutes</div>
-          </div>
-          <div className="countdown-card">
-            <div className="countdown-number">{timeLeft.seconds}</div>
-            <div className="countdown-label">Secondes</div>
-          </div>
-        </div>
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [hasEnded, setHasEnded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+      if (Object.keys(newTimeLeft).length === 0) {
+        setHasEnded(true);
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  const timerComponents: JSX.Element[] = [];
+
+  Object.keys(timeLeft).forEach((interval) => {
+    if (timeLeft[interval as keyof typeof timeLeft] === undefined) {
+      return;
+    }
+
+    timerComponents.push(
+      <div key={interval} className="flex flex-col items-center mx-4 my-2">
+        <motion.div
+          key={`${interval}-${timeLeft[interval as keyof typeof timeLeft]}`}
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="text-4xl md:text-6xl font-serif text-white font-bold glass-card w-20 h-20 md:w-24 md:h-24 flex items-center justify-center rounded-xl mb-2 text-gold shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+        >
+          {timeLeft[interval as keyof typeof timeLeft]}
+        </motion.div>
+        <span className="text-sm uppercase tracking-widest text-white/70">{interval}</span>
       </div>
+    );
+  });
+
+  return (
+    <section className="py-20 flex flex-col items-center justify-center">
+      {hasEnded ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl md:text-6xl font-serif text-gold mb-4">Aujourd’hui, on célèbre Queen 💖</h2>
+          <p className="text-xl text-white/80">Que la fête commence !</p>
+        </motion.div>
+      ) : (
+        <>
+          <motion.h3
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-2xl font-light mb-8 text-white/80"
+          >
+            Le grand moment approche...
+          </motion.h3>
+          <div className="flex flex-wrap justify-center">
+            {timerComponents.length ? timerComponents : <span>C'est l'heure !</span>}
+          </div>
+        </>
+      )}
     </section>
   );
 };

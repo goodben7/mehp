@@ -1,42 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const PersonalMessage = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen flex items-center justify-center px-6 py-20"
-    >
-      <div
-        className={`max-w-2xl transform transition-all duration-1000 ${
-          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        }`}
-      >
-        <div className="message-card">
-          <div className="text-6xl mb-8 text-center">💌</div>
-          <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
-            Pour Toi, Queen
-          </h3>
-          <div className="space-y-6 text-lg md:text-xl text-gray-100 leading-relaxed">
+    <section className="min-h-screen flex items-center justify-center px-4 py-20">
+      <div className="max-w-3xl w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-gold/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl" />
+
+          <div className="text-center mb-10">
+            <span className="text-5xl mb-4 block">💌</span>
+            <h3 className="text-3xl md:text-5xl font-serif text-white mb-2">
+              Pour Toi, Queen
+            </h3>
+            <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
+          </div>
+
+          <div className="space-y-6 text-lg md:text-xl text-white/90 leading-relaxed font-light text-center">
             <p>
               Chaque jour à tes côtés est un cadeau précieux. Tu illumines ma vie
               de ta présence, de ton sourire et de ta douceur.
@@ -50,11 +35,11 @@ const PersonalMessage = () => {
               autant de bonheur que tu en donnes aux autres, et des moments
               magiques que nous partagerons ensemble.
             </p>
-            <p className="text-center text-2xl mt-8 text-pink-300">
+            <p className="text-3xl md:text-4xl font-handwriting mt-12 text-gold">
               Je t'aime infiniment 💕
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
