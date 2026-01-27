@@ -4,6 +4,18 @@ import { Heart } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20">
+      {/* Background Image - Subtle & Cinematic */}
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-0 bg-night/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-night/70 z-10" />
+        <img
+          src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?auto=format&fit=crop&q=80&w=2000"
+          alt="Background Memory"
+          className="w-full h-full object-cover opacity-20 blur-[3px] scale-105"
+          style={{ objectPosition: 'center 30%' }}
+        />
+      </div>
+
       {/* Background Glow */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-romantic-pink/5 rounded-full blur-[100px] -z-10"
