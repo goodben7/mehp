@@ -15,7 +15,7 @@ const Gallery = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-5xl font-serif text-center text-soft-gold mb-16"
             >
-                Queen Moments 💖
+                Mon être humain préféré 💖
             </motion.h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">

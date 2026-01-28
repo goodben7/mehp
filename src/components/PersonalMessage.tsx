@@ -16,24 +16,31 @@ const PersonalMessage = () => {
           <div className="text-center mb-10">
             <span className="text-5xl mb-4 block animate-pulse-slow">💌</span>
             <h3 className="text-3xl md:text-5xl font-serif text-white mb-2 drop-shadow-md">
-              Pour Toi, Queen
+              Mon être humain préféré
             </h3>
             <div className="h-1 w-20 bg-soft-gold mx-auto rounded-full mt-4" />
           </div>
 
           <div className="space-y-6 text-lg md:text-xl text-muted-text leading-relaxed font-light text-center">
             <p>
-              Chaque jour à tes côtés est un cadeau précieux. Tu illumines ma vie
-              de ta présence, de ton sourire et de ta douceur.
+              Chaque jour à tes côtés est un cadeau précieux.
+              Tu illumines ma vie par ta présence, ton sourire et ta douceur.
             </p>
             <p>
-              En ce jour spécial, je veux que tu saches à quel point tu comptes
-              pour moi. Tu es ma source d'inspiration, ma joie et mon bonheur.
+              En ce jour spécial, je veux que tu saches à quel point tu comptes pour moi.
+              Tu es ma source d’inspiration, ma joie et mon bonheur.
             </p>
             <p>
-              Que cette nouvelle année t'apporte tout ce que ton cœur désire,
-              autant de bonheur que tu en donnes aux autres, et des moments
-              magiques que nous partagerons ensemble.
+              Merci d’être restée à mes côtés dans chaque épreuve, chaque victoire, chaque silence.
+              Ton amour m’a porté, fortifié et apaisé.
+            </p>
+            <p>
+              Je prie que cette nouvelle année de ta vie t’apporte tout ce que ton cœur désire,
+              autant de bonheur que tu en donnes,
+              et encore plus de moments magiques… ensemble.
+            </p>
+            <p>
+              Pour toujours et à jamais ❤️
             </p>
             <p className="text-4xl md:text-5xl font-handwriting mt-12 text-romantic-pink drop-shadow-sm transform -rotate-2">
               Je t'aime infiniment 💕

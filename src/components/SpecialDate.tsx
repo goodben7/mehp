@@ -36,7 +36,7 @@ const SpecialDate = () => {
                     transition={{ delay: 0.8 }}
                     className="mt-8 text-lg text-white/60 font-light italic"
                 >
-                    Le jour où on célèbre Queen 💖
+                    Le jour où on célèbre mon être humain préféré 💖
                 </motion.p>
             </motion.div>
         </section>

@@ -1,3 +1,10 @@
+import img1 from '../assets/1.jpeg';
+import img2 from '../assets/2.jpeg';
+import img3 from '../assets/3.jpeg';
+import img4 from '../assets/4.jpeg';
+import img5 from '../assets/5.jpeg';
+import img6 from '../assets/6.jpeg';
+
 export interface Photo {
   id: string;
   src: string;
@@ -8,34 +15,34 @@ export interface Photo {
 export const photos: Photo[] = [
   {
     id: '1',
-    src: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=600',
+    src: img1,
     caption: 'Cinque Terre, Italie',
     date: 'Été 2023'
   },
   {
     id: '2',
-    src: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600',
+    src: img2,
     caption: 'Notre première soirée',
     date: 'Octobre 2022'
   },
   {
     id: '3',
-    src: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&q=80&w=600',
+    src: img3,
     caption: 'Juste toi ✨',
   },
   {
     id: '4',
-    src: 'https://images.unsplash.com/photo-1516961642265-531546e84af2?auto=format&fit=crop&q=80&w=600',
+    src: img4,
     caption: 'Sourire radieux',
   },
   {
     id: '5',
-    src: 'https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?auto=format&fit=crop&q=80&w=600',
+    src: img5,
     caption: 'Paris ❤️',
   },
   {
     id: '6',
-    src: 'https://images.unsplash.com/photo-1520052203542-d3095f126cf4?auto=format&fit=crop&q=80&w=600',
+    src: img6,
     caption: 'Vers l\'infini',
   }
 ];

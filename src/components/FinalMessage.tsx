@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import img1 from '../assets/1.jpeg';
 
 const FinalMessage = () => {
   return (
@@ -9,7 +10,7 @@ const FinalMessage = () => {
         <div className="absolute inset-0 bg-night/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-night/70 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=600"
+          src={img1}
           alt="Future together"
           className="w-full h-full object-cover opacity-20 blur-[3px] scale-105"
         />
