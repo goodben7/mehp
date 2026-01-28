@@ -69,7 +69,7 @@ const HeroSection = () => {
           transition={{ delay: 1.5, duration: 1 }}
           className="text-3xl md:text-5xl font-light text-romantic-pink italic drop-shadow-md"
         >
-          Ma Queen
+          Mon être humain préféré
         </motion.h2>
       </div>
 

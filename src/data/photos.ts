@@ -16,33 +16,37 @@ export const photos: Photo[] = [
   {
     id: '1',
     src: img1,
-    caption: 'Cinque Terre, Italie',
-    date: 'Été 2023'
+    caption: "Je t'aime",
+    date: 'Pour toujours et à jamais'
   },
   {
     id: '2',
     src: img2,
-    caption: 'Notre première soirée',
-    date: 'Octobre 2022'
+    caption: "Je t'aime",
+    date: 'Tant que je serai là, tu ne seras jamais seule.'
   },
   {
     id: '3',
     src: img3,
     caption: 'Juste toi ✨',
+    date: 'Tu es incroyable'
   },
   {
     id: '4',
     src: img4,
-    caption: 'Sourire radieux',
+    caption: "Je t'aime à l'infini",
+    date: "Mon être humain préféré"
   },
   {
     id: '5',
     src: img5,
-    caption: 'Paris ❤️',
+    caption: 'Sourire radieux',
+    date: "Tu illumines ma vie"
   },
   {
     id: '6',
     src: img6,
-    caption: 'Vers l\'infini',
+    caption: "Je t'aime infiniment",
+    date: 'Pour toujours et à jamais'
   }
 ];
