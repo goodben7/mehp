@@ -16,32 +16,32 @@ export const photos: Photo[] = [
   {
     id: '1',
     src: img1,
-    caption: "Je t'aime",
-    date: 'Pour toujours et à jamais'
+    caption: 'Pour toujours et à jamais',
+    date: "Je t'aime"
   },
   {
     id: '2',
     src: img2,
-    caption: "Je t'aime",
-    date: 'Tant que je serai là, tu ne seras jamais seule.'
+    caption: 'Tant que je serai là, tu ne seras jamais seule.',
+    date: "Je t'aime"
   },
   {
     id: '3',
     src: img3,
-    caption: 'Juste toi ✨',
-    date: 'Tu es incroyable'
+    caption: 'Tu es incroyable',
+    date: 'Juste toi ✨'
   },
   {
     id: '4',
     src: img4,
-    caption: "Je t'aime à l'infini",
-    date: "Mon être humain préféré"
+    caption: "Mon être humain préféré",
+    date: "Je t'aime à l'infini"
   },
   {
     id: '5',
     src: img5,
-    caption: 'Sourire radieux',
-    date: "Tu illumines ma vie"
+    caption: "Tu illumines ma vie",
+    date: 'Sourire radieux'
   },
   {
     id: '6',
