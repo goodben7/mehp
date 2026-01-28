@@ -4,6 +4,7 @@ import PersonalMessage from './components/PersonalMessage';
 import FinalMessage from './components/FinalMessage';
 import Gallery from './components/Gallery';
 import Particles from './components/Particles';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,9 +19,7 @@ function App() {
         <FinalMessage />
       </main>
 
-      <footer className="relative z-10 text-center py-8 text-white/20 text-sm">
-        Fait avec 💖 par Benjii
-      </footer>
+      <Footer />
     </div>
   );
 }
