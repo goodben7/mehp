@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import img6 from '../assets/6.jpeg';
 
 const HeroSection = () => {
@@ -71,6 +72,23 @@ const HeroSection = () => {
         >
           Mon être humain préféré
         </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="mt-12"
+        >
+          <Link to="/valentines">
+            <button className="group relative px-8 py-3 bg-gradient-to-r from-romantic-pink/20 to-purple-500/20 backdrop-blur-md border border-romantic-pink/50 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(244,114,182,0.4)] hover:scale-105">
+              <div className="absolute inset-0 bg-romantic-pink/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="flex items-center gap-3 relative z-10">
+                <Heart className="w-5 h-5 text-romantic-pink fill-romantic-pink animate-pulse" />
+                <span className="text-white font-serif tracking-wide">Une surprise t'attend...</span>
+              </div>
+            </button>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator - Bottom Pinned */}
