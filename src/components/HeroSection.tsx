@@ -77,7 +77,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="mt-12"
+          className="mt-12 flex flex-col md:flex-row gap-4 justify-center items-center"
         >
           <Link to="/valentines">
             <button className="group relative px-8 py-3 bg-gradient-to-r from-romantic-pink/20 to-purple-500/20 backdrop-blur-md border border-romantic-pink/50 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(244,114,182,0.4)] hover:scale-105">
@@ -85,6 +85,15 @@ const HeroSection = () => {
               <div className="flex items-center gap-3 relative z-10">
                 <Heart className="w-5 h-5 text-romantic-pink fill-romantic-pink animate-pulse" />
                 <span className="text-white font-serif tracking-wide">Une surprise t'attend...</span>
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/anniversary">
+            <button className="group relative px-8 py-3 bg-gradient-to-r from-soft-gold/20 to-orange-500/20 backdrop-blur-md border border-soft-gold/50 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,194,122,0.4)] hover:scale-105">
+              <div className="absolute inset-0 bg-soft-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="flex items-center gap-3 relative z-10">
+                <span className="text-white font-serif tracking-wide">Nos un an</span>
               </div>
             </button>
           </Link>
